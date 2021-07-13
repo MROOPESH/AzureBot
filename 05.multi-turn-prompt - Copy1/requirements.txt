@@ -1,0 +1,5 @@
+aiohttp
+botbuilder-dialogs>=4.7.0
+botbuilder-ai>=4.7.0
+azure-storage-file-datalake
+pandas
