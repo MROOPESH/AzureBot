@@ -115,7 +115,9 @@ class UserProfileDialog(ComponentDialog):
 
         user_profile.empdetails = step_context.values["empdetails"]
         user_profile.empid = step_context.values["empid"]
-        qdl = QueryDatalake()
+        #qdl = QueryDatalake()
+        qdl = QueryDatalake("DefaultEndpointsProtocol=[http|https];AccountName=azurebotstorageaccount;AccountKey=ud4ewh4ZOercYoleC41KY+U6eaRiC1dhUrxycYgx3EjaUtZhiKQxGvYBhvVIvDRJQBjqw+hrcQcTH5tv6dMjew==",
+                             "azure-bot-input-data", "export.csv")
         ans = qdl.query_datalake(int(user_profile.empid), user_profile.empdetails)
 
         await step_context.context.send_activity(MessageFactory.text(ans))
