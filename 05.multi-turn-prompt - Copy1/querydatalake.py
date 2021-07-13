@@ -4,7 +4,7 @@ from io import BytesIO
 import pandas as pd
 
 class QueryDatalake:
-    """
+    
     def __init__(self, connection_string: str, file_system_name: str, file_path: str):
         
         # coonect to datalake storage...
@@ -16,13 +16,13 @@ class QueryDatalake:
         # readall the contents to data variable...
         self.data = self.download.readall()
         
-    """
+    
 
 
     def query_datalake(self, empid: int, query: str):
         # loading the bytes data into pandas dataframe...
-        #df = pd.read_csv(BytesIO(self.data))
-        df = pd.read_csv("C:\\Users\\rmaganti\\Downloads\\export.csv")
+        df = pd.read_csv(BytesIO(self.data))
+        # df = pd.read_csv("C:\\Users\\rmaganti\\Downloads\\export.csv")
         query_output = ""
         df = df[df['job_tos_is1'] == 1]
         # query = int(query)
